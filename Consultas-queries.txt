@@ -1,48 +1,20 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
-{\colortbl;\red255\green255\blue255;\red133\green0\blue135;\red255\green255\blue255;\red52\green52\blue52;
-\red253\green134\blue8;\red251\green0\blue255;\red14\green110\blue109;\red52\green52\blue52;\red255\green255\blue255;
-}
-{\*\expandedcolortbl;;\cssrgb\c60000\c0\c60000;\cssrgb\c100000\c100000\c100000;\cssrgb\c26667\c26667\c26667;
-\cssrgb\c100000\c60000\c0;\cssrgb\c100000\c0\c100000;\cssrgb\c0\c50196\c50196;\cssrgb\c26667\c26667\c26667;\cssrgb\c100000\c100000\c100000;
-}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11320\viewh9140\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+Ejercicio 1
+SELECT COUNT(flightID) FROM Flights;
 
-\f0\fs24 \cf0 Ejercicio 1\
-\pard\pardeftab720\sl340\partightenfactor0
+Ejercicio 2
+SELECT Origin, AVG(DepDelay)AS prom_salidas, AVG(ArrDelay)AS prom_llegadas FROM Flights GROUP BY Origin;
 
-\f1\fs26\fsmilli13120 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 SELECT\cf4 \strokec4 \'a0\cf2 \strokec2 COUNT\cf4 \strokec4 (flightID)\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights;\
-\
-Ejercicio 2\
-\cf2 \strokec2 SELECT\cf4 \strokec4 \'a0Origin,\'a0AVG(DepDelay)\cf2 \strokec2 AS\cf4 \strokec4 \'a0prom_salidas,\'a0AVG(ArrDelay)\cf2 \strokec2 AS\cf4 \strokec4 \'a0prom_llegadas\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights\'a0\cf2 \strokec2 GROUP\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0Origin;\
-\
 Ejercicio 3
-\f0 \
+SELECT Origin, colYear, colMonth, AVG(ArrDelay) FROM Flights GROUP BY Origin , colYear, colMonth ORDER BY Origin
 
-\f1 \cf2 \strokec2 SELECT\cf4 \strokec4 \'a0Origin,\'a0colYear,\'a0colMonth,\'a0AVG(ArrDelay)\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights\'a0\cf2 \strokec2 GROUP\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0Origin\'a0,\'a0colYear,\'a0colMonth\'a0\cf2 \strokec2 ORDER\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0Origin\
-\
-Ejercicio 4\
-\pard\pardeftab720\sl340\partightenfactor0
-\cf2 \cb1 \strokec2 SELECT\cf4 \strokec4 \'a0USAirports\cf5 \strokec5 .City\cf4 \strokec4 ,\'a0colYear,\'a0colMonth,\'a0AVG(Flights\cf5 \strokec5 .ArrDelay\cf4 \strokec4 )\cf2 \strokec2 AS\cf4 \strokec4 \'a0prom_llegadas\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights\'a0\cf2 \strokec2 JOIN\cf4 \strokec4 \'a0USAirports\'a0\cf2 \strokec2 ON\cf4 \strokec4 \'a0Flights\cf5 \strokec5 .Origin\cf4 \strokec4 \'a0\cf6 \strokec6 =\cf4 \strokec4 \'a0USAirports\cf5 \strokec5 .IATA\cf4 \strokec4 \'a0\cf2 \strokec2 GROUP\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0USAirports\cf5 \strokec5 .City\cf4 \strokec4 ,\'a0colYear,\'a0colMonth\'a0\cf2 \strokec2 ORDER\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0USAirports\cf5 \strokec5 .City\cf4 \strokec4 \'a0\cf2 \strokec2 ASC\cf4 \strokec4 ,\'a0Flights\cf5 \strokec5 .colYear\cf4 \strokec4 \'a0\cf2 \strokec2 ASC\cf4 \strokec4 ,\'a0Flights\cf5 \strokec5 .colMonth\cf4 \strokec4 \'a0\cf2 \strokec2 ASC;\cf4 \strokec4 \
-\pard\pardeftab720\sl340\partightenfactor0
-\cf4 \cb3 \
-Ejercicio 5\
-\pard\pardeftab720\sl340\partightenfactor0
-\cf2 \strokec2 SELECT\cf4 \strokec4 \'a0UniqueCarrier,\'a0colYear,\'a0colMonth,\'a0Cancelled\'a0\cf2 \strokec2 AS\cf4 \strokec4 \'a0total_cancelled\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights\'a0\cf2 \strokec2 ORDER\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0Cancelled;\
-\
-\pard\pardeftab720\sl340\partightenfactor0
-\cf4 Ejercicio 6\
-\pard\pardeftab720\sl340\partightenfactor0
-\cf2 \cb1 \strokec2 SELECT\cf4 \strokec4 \'a0TailNum,\'a0SUM(Distance)\'a0\cf2 \strokec2 AS\cf4 \strokec4 \'a0totalDistance\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights\'a0\cf2 \strokec2 WHERE\cf4 \strokec4 \'a0TailNum\'a0\cf6 \strokec6 <>\cf4 \strokec4 \'a0''\'a0\cf2 \strokec2 GROUP\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0TailNum\'a0\cf2 \strokec2 ORDER\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0totalDistance\'a0\cf2 \strokec2 DESC\cf4 \strokec4 \'a0\cf2 \strokec2 LIMIT\cf4 \strokec4 \'a0\cf7 \strokec7 10;\cf4 \strokec4 \
-\pard\pardeftab720\sl340\partightenfactor0
-\cf4 \cb3 \
-\pard\pardeftab720\sl340\partightenfactor0
+Ejercicio 4
+SELECT USAirports.City, colYear, colMonth, AVG(Flights.ArrDelay)AS prom_llegadas FROM Flights JOIN USAirports ON Flights.Origin = USAirports.IATA GROUP BY USAirports.City, colYear, colMonth ORDER BY USAirports.City ASC, Flights.colYear ASC, Flights.colMonth ASC;
 
-\fs26\fsmilli13120 \cf8 \cb9 \outl0\strokewidth0 Ejercicio 7\
-\pard\pardeftab720\sl340\partightenfactor0
+Ejercicio 5
+SELECT UniqueCarrier, colYear, colMonth, SUM(Cancelled) AS total_cancelled FROM Flights GROUP BY Cancelled, colYear, colMonth ORDER BY total_cancelled DESC;
 
-\fs26\fsmilli13120 \cf2 \cb3 \outl0\strokewidth0 \strokec2 SELECT\cf4 \strokec4 \'a0UniqueCarrier,\'a0AVG(ArrDelay)\'a0\cf2 \strokec2 AS\cf4 \strokec4 \'a0avgDelay\'a0\cf2 \strokec2 FROM\cf4 \strokec4 \'a0Flights\'a0\cf2 \strokec2 GROUP\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0UniqueCarrier\'a0\cf2 \strokec2 HAVING\cf4 \strokec4 \'a0avgDelay\'a0\cf6 \strokec6 >\cf4 \strokec4 \'a0\cf7 \strokec7 10\cf4 \strokec4 \'a0\cf2 \strokec2 ORDER\cf4 \strokec4 \'a0\cf2 \strokec2 BY\cf4 \strokec4 \'a0avgDelay;
-\fs26\fsmilli13120 \cf8 \cb9 \outl0\strokewidth0 \
-}
+Ejercicio 6
+SELECT TailNum, SUM(Distance) AS totalDistance FROM Flights WHERE TailNum <> '' GROUP BY TailNum ORDER BY totalDistance DESC LIMIT 10;
+
+Ejercicio 7
+SELECT UniqueCarrier, AVG(ArrDelay) AS avgDelay FROM Flights GROUP BY UniqueCarrier HAVING avgDelay > 10 ORDER BY avgDelay;
